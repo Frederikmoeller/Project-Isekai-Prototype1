@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://kkma864lk8oe"]
+
+[ext_resource type="Script" uid="uid://bnd5djvu1dnn0" path="res://src/Scripts/Debug/DebugOverlay.cs" id="1_8shcw"]
+
+[node name="DebugTextOverlay" type="Control" unique_id=378760859 node_paths=PackedStringArray("fpsLabel", "VersionInfoLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8shcw")
+fpsLabel = NodePath("MarginContainer/VBoxContainer/FPS")
+VersionInfoLabel = NodePath("MarginContainer/VBoxContainer/Version")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=619056204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1493152838]
+layout_mode = 2
+alignment = 2
+
+[node name="FPS" type="Label" parent="MarginContainer/VBoxContainer" unique_id=298724278]
+layout_mode = 2
+
+[node name="Version" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1002001626]
+layout_mode = 2
+
+[node name="Meta" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1695189778]
+layout_mode = 2
+text = "Project Isekai
+Developed by Team Isekai"
