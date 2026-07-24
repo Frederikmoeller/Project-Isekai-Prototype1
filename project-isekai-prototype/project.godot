@@ -31,6 +31,14 @@ folder_colors={
 "res://src/Scripts/Debug/": "yellow"
 }
 
+[layer_names]
+
+2d_render/layer_1="World"
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Objects"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bl3raldo6ds4u"]
+
+[ext_resource type="PackedScene" uid="uid://cpgueoan4r5wv" path="res://src/Scenes/Entities/enemy.tscn" id="1_dcgsl"]
+[ext_resource type="PackedScene" uid="uid://du0t0dritipbg" path="res://src/Scenes/Entities/character.tscn" id="2_knysa"]
+[ext_resource type="PackedScene" uid="uid://btnb2yvimry52" path="res://src/Scenes/wall.tscn" id="3_scs2s"]
+
+[node name="DungeonLevel" type="Node2D" unique_id=989569726]
+
+[node name="Enemy" parent="." unique_id=769302819 instance=ExtResource("1_dcgsl")]
+position = Vector2(504, 233)
+ObstacleCollisionMask = 1
+
+[node name="Character" parent="." unique_id=1386125307 instance=ExtResource("2_knysa")]
+position = Vector2(655, 239)
+collision_layer = 2
+collision_mask = 13
+
+[node name="Wall" parent="." unique_id=1928107614 instance=ExtResource("3_scs2s")]
+position = Vector2(588, 237)
