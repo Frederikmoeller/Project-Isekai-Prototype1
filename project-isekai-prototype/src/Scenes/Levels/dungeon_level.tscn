@@ -1,19 +1,65 @@
 [gd_scene format=3 uid="uid://bl3raldo6ds4u"]
 
-[ext_resource type="PackedScene" uid="uid://cpgueoan4r5wv" path="res://src/Scenes/Entities/enemy.tscn" id="1_dcgsl"]
-[ext_resource type="PackedScene" uid="uid://du0t0dritipbg" path="res://src/Scenes/Entities/character.tscn" id="2_knysa"]
 [ext_resource type="PackedScene" uid="uid://btnb2yvimry52" path="res://src/Scenes/wall.tscn" id="3_scs2s"]
 
 [node name="DungeonLevel" type="Node2D" unique_id=989569726]
 
-[node name="Enemy" parent="." unique_id=769302819 instance=ExtResource("1_dcgsl")]
-position = Vector2(504, 233)
-ObstacleCollisionMask = 1
+[node name="EnemySpawns" type="Node" parent="." unique_id=542649898]
 
-[node name="Character" parent="." unique_id=1386125307 instance=ExtResource("2_knysa")]
-position = Vector2(655, 239)
-collision_layer = 2
-collision_mask = 13
+[node name="Marker2D" type="Marker2D" parent="EnemySpawns" unique_id=883374009]
+position = Vector2(1508, 648)
 
-[node name="Wall" parent="." unique_id=1928107614 instance=ExtResource("3_scs2s")]
-position = Vector2(588, 237)
+[node name="Marker2D2" type="Marker2D" parent="EnemySpawns" unique_id=1395956412]
+position = Vector2(3321, 67)
+
+[node name="Marker2D3" type="Marker2D" parent="EnemySpawns" unique_id=1405437952]
+position = Vector2(3751, 2193)
+
+[node name="Marker2D4" type="Marker2D" parent="EnemySpawns" unique_id=1537989677]
+position = Vector2(530, 1232)
+
+[node name="Marker2D5" type="Marker2D" parent="EnemySpawns" unique_id=850625676]
+position = Vector2(-786, 773)
+
+[node name="PlayerSpawn" type="Node" parent="." unique_id=1700520976]
+
+[node name="Marker2D6" type="Marker2D" parent="PlayerSpawn" unique_id=2094918106]
+position = Vector2(1846, 2540)
+
+[node name="Walls" type="Node" parent="." unique_id=1999007696]
+
+[node name="Wall" parent="Walls" unique_id=1928107614 instance=ExtResource("3_scs2s")]
+position = Vector2(160, 2.0000038)
+scale = Vector2(1, 8.005)
+
+[node name="Wall3" parent="Walls" unique_id=1546978042 instance=ExtResource("3_scs2s")]
+position = Vector2(1184, 578.00006)
+scale = Vector2(1, 8.005)
+
+[node name="Wall4" parent="Walls" unique_id=1121510746 instance=ExtResource("3_scs2s")]
+position = Vector2(1472, 866)
+rotation = 1.5707964
+scale = Vector2(1, 8.005)
+
+[node name="Wall2" parent="Walls" unique_id=1114015169 instance=ExtResource("3_scs2s")]
+position = Vector2(672, 290)
+rotation = 1.5707964
+scale = Vector2(1, 15)
+
+[node name="Wall5" parent="Walls" unique_id=465772980 instance=ExtResource("3_scs2s")]
+position = Vector2(1848, -286)
+rotation = 1.5707964
+scale = Vector2(1, 100)
+
+[node name="Wall8" parent="Walls" unique_id=1262105101 instance=ExtResource("3_scs2s")]
+position = Vector2(1848, 2850)
+rotation = 1.5707964
+scale = Vector2(1, 100)
+
+[node name="Wall6" parent="Walls" unique_id=799732022 instance=ExtResource("3_scs2s")]
+position = Vector2(-1384, 1282)
+scale = Vector2(1, 50)
+
+[node name="Wall7" parent="Walls" unique_id=1868629912 instance=ExtResource("3_scs2s")]
+position = Vector2(5080, 1282)
+scale = Vector2(1, 50)

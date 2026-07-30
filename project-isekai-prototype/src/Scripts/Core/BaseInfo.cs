@@ -5,9 +5,11 @@ using System;
 public partial class BaseInfo : Resource
 {
     [Export] public string Name { get; set; }
+    [Export] public Color CharacterColor { get; set; }
     [Export] public int Health { get; set; }
     [Export] public int Armour { get; set; }
     [Export] public int Mana { get; set; }
     [Export] public int Speed { get; set; }
     [Export] public int Attack { get; set; }
+    [Export] public float VisionRange { get; set; }
 }

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://bk7yjtll4fqvt"]
+
+[ext_resource type="Script" uid="uid://o0epn6tfgk0i" path="res://src/Scripts/Core/Ability.cs" id="1_nomm3"]
+
+[resource]
+script = ExtResource("1_nomm3")
+AbilityName = "Dagger Throw"
+Damage = 10
+DealsDamage = true
+metadata/_custom_type_script = "uid://o0epn6tfgk0i"

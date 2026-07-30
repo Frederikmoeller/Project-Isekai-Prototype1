@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dl5tvo55o1u08"]
+
+[ext_resource type="Script" uid="uid://dbxpmpmic0pto" path="res://src/Scripts/Nodes/BattleHUD.cs" id="1_t5xkn"]
+[ext_resource type="PackedScene" uid="uid://c1b8wjwya03av" path="res://src/Scenes/UI/HUD/AbilityButton.tscn" id="1_x5ejq"]
+
+[node name="BattleHUD" type="Control" unique_id=332015354 node_paths=PackedStringArray("AbilityButtons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+mouse_behavior_recursive = 2
+script = ExtResource("1_t5xkn")
+AbilityButtons = [NodePath("MarginContainer/HBoxContainer/AbilityButton"), NodePath("MarginContainer/HBoxContainer/AbilityButton2"), NodePath("MarginContainer/HBoxContainer/AbilityButton3"), NodePath("MarginContainer/HBoxContainer/AbilityButton4"), NodePath("MarginContainer/HBoxContainer/AbilityButton5")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=990735391]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=901241763]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 2
+
+[node name="AbilityButton" parent="MarginContainer/HBoxContainer" unique_id=1078453743 instance=ExtResource("1_x5ejq")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+
+[node name="AbilityButton2" parent="MarginContainer/HBoxContainer" unique_id=864146696 instance=ExtResource("1_x5ejq")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+
+[node name="AbilityButton3" parent="MarginContainer/HBoxContainer" unique_id=928876310 instance=ExtResource("1_x5ejq")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+
+[node name="AbilityButton4" parent="MarginContainer/HBoxContainer" unique_id=1012826787 instance=ExtResource("1_x5ejq")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+
+[node name="AbilityButton5" parent="MarginContainer/HBoxContainer" unique_id=1744076188 instance=ExtResource("1_x5ejq")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1

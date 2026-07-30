@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://cwvmcun86a58r"]
 
 [ext_resource type="PackedScene" uid="uid://kkma864lk8oe" path="res://src/Scenes/UI/Debug/DebugTextOverlay.tscn" id="1_44tgd"]
+[ext_resource type="PackedScene" uid="uid://dl5tvo55o1u08" path="res://src/Scenes/UI/HUD/BattleHUD.tscn" id="1_bjrlf"]
+[ext_resource type="Script" uid="uid://bf78e7sn2cyaf" path="res://src/Scripts/Nodes/MainGame.cs" id="1_cck6u"]
 
 [node name="MainGame" type="Node" unique_id=40845205]
+process_mode = 3
+script = ExtResource("1_cck6u")
 
 [node name="World" type="Node2D" parent="." unique_id=195703002]
+process_mode = 1
 
 [node name="LevelRoot" type="Node2D" parent="World" unique_id=1532948279]
 
@@ -12,7 +17,10 @@
 
 [node name="EffectRoot" type="Node2D" parent="World" unique_id=664388840]
 
+[node name="Camera2D" type="Camera2D" parent="World" unique_id=1855306486]
+
 [node name="HUDLayer" type="CanvasLayer" parent="." unique_id=1829153805]
+layer = 10
 
 [node name="HUDRoot" type="Control" parent="HUDLayer" unique_id=474333180]
 layout_mode = 3
@@ -21,8 +29,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+mouse_behavior_recursive = 2
+
+[node name="BattleHUD" parent="HUDLayer/HUDRoot" unique_id=332015354 instance=ExtResource("1_bjrlf")]
+layout_mode = 1
 
 [node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1219272312]
+process_mode = 2
+layer = 20
 
 [node name="PauseRoot" type="Control" parent="PauseLayer" unique_id=1954543111]
 layout_mode = 3
@@ -31,8 +46,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1322904360]
+process_mode = 3
+layer = 100
 
 [node name="TransitionRoot" type="Control" parent="TransitionLayer" unique_id=1709970580]
 layout_mode = 3
@@ -41,8 +59,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=581510344]
+process_mode = 3
+layer = 128
 
 [node name="DebugRoot" type="Control" parent="DebugLayer" unique_id=280624187]
 layout_mode = 3
@@ -51,6 +72,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="DebugTextOverlay" parent="DebugLayer/DebugRoot" unique_id=378760859 instance=ExtResource("1_44tgd")]
 layout_mode = 1

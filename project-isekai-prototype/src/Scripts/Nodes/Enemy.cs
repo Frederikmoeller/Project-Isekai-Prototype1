@@ -13,10 +13,13 @@ public partial class Enemy : Node2D
     [Export] public uint ObstacleCollisionMask { get; set; } = 1u << 0;
     [Export] public bool ShowVisionDebug { get; set; } = true;
 
+    [Export] public TextureProgressBar healthBar { get; set; }
+
     public override void _Ready()
     {
         GD.Print($"Enemy mask: {PlayerCollisionMask}");
         SetFacingFromRotation();
+        SetupHealthbar();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -86,6 +89,12 @@ public partial class Enemy : Node2D
     public void SetFacingFromRotation()
     {
         FacingDirection = Vector2.Right.Rotated(Rotation).Normalized();
+    }
+
+    public void SetupHealthbar()
+    {
+        healthBar.MaxValue = BaseInfo.Health;
+        healthBar.Value = BaseInfo.Health;
     }
 
     public override void _Draw()

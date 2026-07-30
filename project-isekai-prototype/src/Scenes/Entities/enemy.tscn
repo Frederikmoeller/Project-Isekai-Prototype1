@@ -14,9 +14,18 @@ radius = 200.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qaq2o"]
 
-[node name="Enemy" type="Node2D" unique_id=769302819]
+[sub_resource type="Gradient" id="Gradient_a66ge"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sgnae"]
+gradient = SubResource("Gradient_a66ge")
+width = 88
+height = 16
+
+[node name="Enemy" type="Node2D" unique_id=769302819 node_paths=PackedStringArray("healthBar")]
 script = ExtResource("1_7us8s")
 PlayerCollisionMask = 2
+healthBar = NodePath("Control/TextureProgressBar")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=91170438]
 rotation = 0.7853982
@@ -38,3 +47,28 @@ collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=924954350]
 shape = SubResource("RectangleShape2D_qaq2o")
+
+[node name="Control" type="Control" parent="." unique_id=1171439908]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -54.0
+offset_right = 44.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=207334033]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_progress = SubResource("GradientTexture2D_sgnae")
